@@ -1,0 +1,43 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffe1754b443, pid=16692, tid=11728
+#
+# JRE version: OpenJDK Runtime Environment (11.0.12+7) (build 11.0.12+7-b1504.28-7817840)
+# Java VM: OpenJDK 64-Bit Server VM (11.0.12+7-b1504.28-7817840, mixed mode, tiered, compressed oops, g1 gc, windows-amd64)
+# Problematic frame:
+# V  [jvm.dll+0x37b443]
+#
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED -Xmx1536M -Dfile.encoding=windows-1252 -Duser.country=BR -Duser.language=pt -Duser.variant org.gradle.launcher.daemon.bootstrap.GradleDaemon 7.4
+
+Host: AMD Ryzen 5 5500U with Radeon Graphics         , 12 cores, 5G,  Windows 10 , 64 bit Build 22621 (10.0.22621.1778)
+Time: Tue Jul 18 11:13:39 2023 Hora oficial do Brasil elapsed time: 200.263876 seconds (0d 0h 3m 20s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000198abf7e000):  JavaThread "Exec process Thread 2" [_thread_in_vm, id=11728, stack(0x0000003574b00000,0x0000003574c00000)]
+
+Stack: [0x0000003574b00000,0x0000003574c00000],  sp=0x0000003574bf7910,  free space=990k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x37b443]
+V  [jvm.dll+0x5fbc12]
+V  [jvm.dll+0x37bdfa]
+V  [jvm.dll+0x37bfc8]
+V  [jvm.dll+0x6ce6bc]
+V  [jvm.dll+0x6cf958]
+V  [jvm.dll+0x6cfd75]
+V  [jvm.dll+0x6d0001]
+V  [jvm.dll+0x1c70c5]
+V  [jvm.dll+0x1c997f]
+V  [jvm.dll+0x1bea94]
+V  [jvm.dll+0x4d3bdb]
+V  [jvm.dll+0x6cf38b]
+V  [jvm.dll+0x3eb3b4]
