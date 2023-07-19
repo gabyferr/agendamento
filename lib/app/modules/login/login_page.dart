@@ -9,7 +9,18 @@ class LoginPage extends StatelessWidget {
       children: [
         Container(
           color: Colors.blueAccent,
-        )
+        ),
+        Scaffold(
+      body: Container(
+        child: Center(
+          child: Container(
+            color: Colors.white,
+            width: 300,
+            child: Text('data') ,
+          ),
+        ),
+      ),
+      ),
       ],
     );
   }
