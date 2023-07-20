@@ -1,4 +1,3 @@
-import 'package:agendamento/app/modules/usuario/usuario_controller.dart';
 import 'package:agendamento/app/modules/usuario/usuario_model.dart';
 import 'package:agendamento/app/util/validacao_util.dart';
 import 'package:brasil_fields/brasil_fields.dart';
@@ -27,7 +26,9 @@ class LoginPage extends StatelessWidget {
             child: Container(
               alignment: Alignment.center,
               width: 300,
-              height: 400,
+              // height: (MediaQuery.of(context).size.height-MediaQuery.of(context).padding.top)*0.85,
+              height: 430,
+              
               decoration: BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(16)),
               child: RxBuilder(builder: (context) {
@@ -49,10 +50,13 @@ class FormLogin extends StatelessWidget {
     UsuarioModel usuarioModel = UsuarioModel();
 
     return Padding(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(20),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          SizedBox(
+            height: 25,
+          ),
           Title(
               color: Colors.black,
               child: Text(
@@ -63,7 +67,7 @@ class FormLogin extends StatelessWidget {
                 ),
               )),
           SizedBox(
-            height: 20,
+            height: 35,
           ),
           TextFormField(
             decoration: InputDecoration(
@@ -79,7 +83,7 @@ class FormLogin extends StatelessWidget {
             },
           ),
           SizedBox(
-            height: 18,
+            height: 25,
           ),
           TextFormField(
             decoration: InputDecoration(
@@ -92,10 +96,12 @@ class FormLogin extends StatelessWidget {
             },
           ),
           SizedBox(
-            height: 20,
+            height: 25,
           ),
           OutlinedButton(
-            child: Text('Entrar'),
+            style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blueAccent)),
+            child: Text('Entrar',
+            style: TextStyle(color: Colors.white)),
             onPressed: () {
               Modular.to.navigate('/');
             },
@@ -124,12 +130,16 @@ class FormCadastro extends StatelessWidget {
     UsuarioModel usuarioModel = UsuarioModel();
     final _formKey = GlobalKey<FormState>();
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(20.0),
       child: Form(
         key: _formKey,
         child: ListView(
+          scrollDirection: Axis.vertical,
           shrinkWrap: true,
           children: [
+            SizedBox(
+              height: 5,
+            ),
             Center(
               child: Title(
                   color: Colors.black,
@@ -195,87 +205,92 @@ class FormCadastro extends StatelessWidget {
               onChanged: (value) {
                 usuarioModel.senha = value;
               },
+               validator: (value) {
+              return ValidacaoUtil.validarSenha(value);
+             },
             ),
-            SizedBox(
-              height: 18,
-            ),
-            TextFormField(
-              inputFormatters: [
-                FilteringTextInputFormatter.digitsOnly,
-                TelefoneInputFormatter(),
-              ],
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: "(00)0000-0000",
-                labelText: "CELULAR:",
-              ),
-              validator: (value) {
-                return ValidacaoUtil.validarCelular(value);
-              },
-              onChanged: (value) {
-                usuarioModel.celular = value;
-              },
-            ),
-            SizedBox(
-              height: 18,
-            ),
-            TextFormField(
-                inputFormatters: [
-                  FilteringTextInputFormatter.digitsOnly,
-                  CpfInputFormatter(),
-                ],
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: "000.000.000-00",
-                  labelText: "CPF:",
-                ),
-                onChanged: (value) {
-                  usuarioModel.cpf = value;
-                }),
-            SizedBox(
-              height: 18,
-            ),
-            TextFormField(
-                inputFormatters: [
-                  FilteringTextInputFormatter.digitsOnly,
-                  DataInputFormatter(),
-                ],
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: "DD-MM-AAAA",
-                  labelText: "DATA SE NACIMENTO:",
-                ),
-                validator: (value) {
-                  return ValidacaoUtil.validarDataNasc(value);
-                },
-                onChanged: (value) {
-                  usuarioModel.dataNacimento = value;
-                }),
-            SizedBox(
-              height: 18,
-            ),
-            TextFormField(
-                inputFormatters: [
-                  FilteringTextInputFormatter.digitsOnly,
-                  CepInputFormatter(),
-                ],
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: "00.000-000",
-                  labelText: "CEP",
-                ),
-                validator: (value) {
-                  return ValidacaoUtil.validarCep(value);
-                },
-                onChanged: (value) {
-                  usuarioModel.cep = value;
-                }),
+            // SizedBox(
+            //   height: 18,
+            // ),
+            // TextFormField(
+            //   inputFormatters: [
+            //     FilteringTextInputFormatter.digitsOnly,
+            //     TelefoneInputFormatter(),
+            //   ],
+            //   decoration: InputDecoration(
+            //     border: OutlineInputBorder(),
+            //     hintText: "(00)0000-0000",
+            //     labelText: "CELULAR:",
+            //   ),
+            //   validator: (value) {
+            //     return ValidacaoUtil.validarCelular(value);
+            //   },
+            //   onChanged: (value) {
+            //     usuarioModel.celular = value;
+            //   },
+            // ),
+            // SizedBox(
+            //   height: 18,
+            // ),
+            // TextFormField(
+            //     inputFormatters: [
+            //       FilteringTextInputFormatter.digitsOnly,
+            //       CpfInputFormatter(),
+            //     ],
+            //     decoration: InputDecoration(
+            //       border: OutlineInputBorder(),
+            //       hintText: "000.000.000-00",
+            //       labelText: "CPF:",
+            //     ),
+            //     onChanged: (value) {
+            //       usuarioModel.cpf = value;
+            //     }),
+            // SizedBox(
+            //   height: 18,
+            // ),
+            // TextFormField(
+            //     inputFormatters: [
+            //       FilteringTextInputFormatter.digitsOnly,
+            //       DataInputFormatter(),
+            //     ],
+            //     decoration: InputDecoration(
+            //       border: OutlineInputBorder(),
+            //       hintText: "DD-MM-AAAA",
+            //       labelText: "DATA SE NACIMENTO:",
+            //     ),
+            //     validator: (value) {
+            //       return ValidacaoUtil.validarDataNasc(value);
+            //     },
+            //     onChanged: (value) {
+            //       usuarioModel.dataNacimento = value;
+            //     }),
+            // SizedBox(
+            //   height: 18,
+            // ),
+            // TextFormField(
+            //     inputFormatters: [
+            //       FilteringTextInputFormatter.digitsOnly,
+            //       CepInputFormatter(),
+            //     ],
+            //     decoration: InputDecoration(
+            //       border: OutlineInputBorder(),
+            //       hintText: "00.000-000",
+            //       labelText: "CEP",
+            //     ),
+            //     validator: (value) {
+            //       return ValidacaoUtil.validarCep(value);
+            //     },
+            //     onChanged: (value) {
+            //       usuarioModel.cep = value;
+            //     }),
             SizedBox(
               height: 20,
             ),
             Center(
               child: OutlinedButton(
-                child: Text('Cadastrar'),
+                style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blueAccent)),
+                child: Text('Cadastrar',
+                 style: TextStyle(color: Colors.white)),
                 onPressed: () {
                   if (!_formKey.currentState!.validate()) {
                     return;

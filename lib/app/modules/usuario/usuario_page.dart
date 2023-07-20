@@ -94,7 +94,7 @@ class UsuarioPage extends StatelessWidget {
                                         ),
                                         OutlinedButton(
                                           onPressed: () {
-                                            Modular.to.navigate('/');
+                                            Modular.to.pop();
                                           },
                                           child: Text('CANCELAR'),
                                         ),
