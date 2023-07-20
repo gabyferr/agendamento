@@ -5,7 +5,7 @@ import 'firebase_options.dart';
 import 'app/config/app_module.dart';
 import 'app/config/app_widget.dart';
 
-Future<void> main() async {
+main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
