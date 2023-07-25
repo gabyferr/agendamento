@@ -44,38 +44,87 @@ class UsuarioPage extends StatelessWidget {
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     )),
-                Text(
-                  'Selecione uma data e hora',
-                  style: TextStyle(fontSize: 18),
+                    
+                Container( padding: EdgeInsets.only(top: 5),
+                  child: Text(
+                    'Selecione uma data e hora',
+                    style: TextStyle(fontSize: 18),
+                  ),
                 ),
-                Column(
-                  children: [
-                    Card(
-                      shadowColor: Colors.black,
-                      child: ListTile(
-                        title: Text(
-                          'Nome do procedimento',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                  
+                  Container(
+                    padding: EdgeInsets.only(top: 30, left: 30, right: 30),
+                    child: Card(  
+                    shadowColor: Colors.black,
+                    child: ListTile(
+                      title: Center(
+                        child: Container( padding: EdgeInsets.only(top: 10, bottom: 5),
+                          child: Text(
+                            'Nome do procedimento',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
                         ),
-                        subtitle: Text('informações'),
-                        trailing: OutlinedButton(
-                            onPressed: () {
-                              showDatePicker(
-                                context: context,
-                                initialDate: DateTime.now(),
-                                firstDate: DateTime.now(),
-                                lastDate: DateTime.now().addMonths(2),
-                              );
-                            },
-                            child: Text('data')),
                       ),
+                      subtitle: Column(
+                          children: [
+                            Container( padding: EdgeInsets.only(bottom: 10,),
+                            
+                              child: Text('informações')),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(                         
+                                children: [
+                                  Row(
+                                    children: [
+                                      SizedBox(width: 60,),
+                                      Text('data'),
+                                      SizedBox(width: 80,),
+                                      OutlinedButton(style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blueAccent)),
+                                          onPressed: () {
+                                            showDatePicker(
+                                              context: context,
+                                              initialDate: DateTime.now(),
+                                              firstDate: DateTime.now(),
+                                              lastDate: DateTime.now().addMonths(2),
+                                            );
+                                          },
+                                          child: Text('data', style: TextStyle(color: Colors.white),)),
+                                    ],
+                                  ),
+                                   Container(
+                                    padding: EdgeInsets.only(top: 10),
+                              child: Column(children: [
+                                Row(
+                                    children: [
+                                      SizedBox(width: 60,),
+                                      Text('hora'),
+                                      SizedBox(width: 80,),
+                                      OutlinedButton(style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blueAccent)),
+                                          onPressed: () {
+                                          DateTime(DateTime.now().getHours);
+                                          },
+                                          child: Text('hora', style: TextStyle(color: Colors.white),)),
+                                    ],
+                                  ),
+                              ]),
+                            ),
+                                ],
+                              ),
+                              
+                            ),
+                           
+                          ],
+                        ),
+                      
+                     
                     ),
-                  ],
-                ),
+                                  ),
+                  ),
                 // Container(child: OutlinedButton(onPressed:, child: child)),
                 Container(
-                  child: OutlinedButton(
-                    child: Text("CONTINUAR"),
+                  padding: EdgeInsets.only(top: 30,),
+                  child: OutlinedButton(style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blueAccent)),
+                    child: Text('CONTINUAR',style: TextStyle(color: Colors.white),),
                     onPressed: () async {
                       showDialog(
                           context: context,
@@ -90,18 +139,18 @@ class UsuarioPage extends StatelessWidget {
                                     child: Row(
                                       children: [
                                         SizedBox(
-                                          width: 20,
+                                          width: 10,
                                         ),
-                                        OutlinedButton(
+                                        OutlinedButton(style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blueAccent)),
                                           onPressed: () {
                                             Modular.to.pop();
                                           },
-                                          child: Text('CANCELAR'),
+                                          child: Text('CANCELAR', style: TextStyle(color: Colors.white),),
                                         ),
                                         SizedBox(
                                           width: 20,
                                         ),
-                                        OutlinedButton(
+                                        OutlinedButton(style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blueAccent)),
                                           onPressed: () {
                                             Modular.get<UsuarioController>()
                                                 .save(usuarioModel);
@@ -124,19 +173,18 @@ class UsuarioPage extends StatelessWidget {
                                                       TextStyle(fontSize: 16),
                                                 ),
                                                 actions: [
-                                                  ElevatedButton(
+                                                  ElevatedButton(style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blueAccent)),
                                                     onPressed: () {
-                                                      Modular.get<
-                                                              UsuarioController>()
-                                                          .save(usuarioModel);
+                                                   
+                                                          Modular.to.pop();
                                                     },
-                                                    child: Text('ok'),
+                                                    child: Text('ok',style: TextStyle(color: Colors.white),),
                                                   ),
                                                 ],
                                               ),
                                             );
                                           },
-                                          child: Text('FINALIZAR'),
+                                          child: Text('FINALIZAR',style: TextStyle(color: Colors.white),),
                                         ),
                                       ],
                                     ),

@@ -1,4 +1,4 @@
-#Thu Jul 20 11:37:43 BRT 2023
+#Tue Jul 25 10:59:36 BRT 2023
 base.0=C\:\\Users\\GabriellyCustodio\\Desktop\\tudo\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\GabriellyCustodio\\Desktop\\tudo\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
 base.2=C\:\\Users\\GabriellyCustodio\\Desktop\\tudo\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex

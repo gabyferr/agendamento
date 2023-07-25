@@ -12,11 +12,12 @@ class DrawerMenu extends StatelessWidget {
           DrawerHeader(
             decoration: const BoxDecoration(
               color: Colors.blue,
+
             ),
             child: Column(
               children: [
                 Container(
-                  padding: const EdgeInsets.only(top: 50, left: 50),
+                  padding: const EdgeInsets.only(top: 50, left: 50, ),
                   child: Row(
                     children: [
                       const Text(

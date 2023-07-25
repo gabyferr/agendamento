@@ -51,71 +51,78 @@ class FormLogin extends StatelessWidget {
 
     return Padding(
       padding: const EdgeInsets.all(20),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(
-            height: 25,
-          ),
-          Title(
-              color: Colors.black,
-              child: Text(
-                'LOGIN',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              )),
-          SizedBox(
-            height: 35,
-          ),
-          TextFormField(
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: "user.user@gmail.com",
-              labelText: "Email",
+
+      child: SingleChildScrollView(
+
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+           
+            SizedBox(
+              height: 25,
             ),
-            validator: (value) {
-              return ValidacaoUtil.validarEmail(value);
-            },
-            onChanged: (value) {
-              usuarioModel.email = value;
-            },
-          ),
-          SizedBox(
-            height: 25,
-          ),
-          TextFormField(
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: "***********:",
-              labelText: "Senha",
+            Title(
+                color: Colors.black,
+                child: Text(
+                  'LOGIN',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )),
+            SizedBox(
+              height: 35,
             ),
-            onChanged: (value) {
-              usuarioModel.senha = value;
-            },
-          ),
-          SizedBox(
-            height: 25,
-          ),
-          OutlinedButton(
-            style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blueAccent)),
-            child: Text('Entrar',
-            style: TextStyle(color: Colors.white)),
-            onPressed: () {
-              Modular.to.navigate('/');
-            },
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          TextButton(
-            child: Text('Cadastrar'),
-            onPressed: () {
-              isFormLogin.value = false;
-            },
-          ),
-        ],
+            TextFormField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: "user.user@gmail.com",
+                labelText: "Email"
+                ,
+              ),
+              validator: (value) {
+                return ValidacaoUtil.validarEmail(value);
+              },
+              onChanged: (value) {
+                usuarioModel.email = value;
+              },
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            TextFormField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: "***********:",
+                labelText: "Senha",
+              ),
+              onChanged: (value) {
+                usuarioModel.senha = value;
+              },
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            OutlinedButton(
+              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blueAccent)),
+              child: Text('Entrar',
+              style: TextStyle(color: Colors.white)),
+              onPressed: () {
+                
+                Modular.to.navigate('/');
+              },
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            TextButton(
+              child: Text('Cadastrar'),
+              onPressed: () {
+                isFormLogin.value = false;
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

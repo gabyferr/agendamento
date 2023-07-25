@@ -17,7 +17,7 @@ class ValidacaoUtil {
   static String? validarSenha(value) {
     if (value.length < 4) {
       return 'Senha inválido';
-    } else {
+    } else  {
       return null;
     }
   }
