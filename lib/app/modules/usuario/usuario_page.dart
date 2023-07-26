@@ -226,7 +226,7 @@ class UsuarioPage extends StatelessWidget {
                                                                 .all(Colors
                                                                     .blueAccent)),
                                                     onPressed: () {
-                                                      Modular.to.pop();
+                                                      Modular.to.navigate('/reservas');
                                                     },
                                                     child: Text(
                                                       'ok',
@@ -268,4 +268,3 @@ class UsuarioPage extends StatelessWidget {
     );
   }
 }
-//https://firebase.google.com/docs/auth/flutter/start?hl=pt-br#:~:text=Primeiros%20passos%20com%20o%20Firebase%20Authentication%20no%20Flutter,estado%20da%20autentica%C3%A7%C3%A3o%20...%206%20Pr%C3%B3ximas%20etapas%20//

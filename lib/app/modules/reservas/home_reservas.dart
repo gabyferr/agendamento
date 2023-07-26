@@ -1,120 +1,119 @@
-// import 'dart:html';
-// import 'dart:math';
+import 'package:agendamento/app/modules/menu/drawer_menu.dart';
+import 'package:flutter/material.dart';
 
-// import 'package:flutter/material.dart';
+class HomeReservas extends StatefulWidget {
+  const HomeReservas({super.key});
 
-// class StarBackground extends StatefulWidget {
-//   @override
-//   _StarBackgroundState createState() => _StarBackgroundState();
-// }
+  @override
+  State<HomeReservas> createState() => _HomeReservasState();
+}
 
-// class _StarBackgroundState extends State<StarBackground>
-//     with SingleTickerProviderStateMixin {
-//   late final AnimationController _controller;
-//   late final List<Star> _stars;
-
-//   @override
-//   void initState() {
-//     super.initState();
-//     WidgetsBinding.instance.addPostFrameCallback((_) {
-//       _controller = AnimationController(
-//         vsync: this,
-//         duration: Duration(minutes: 1),
-//       );
-
-//       _stars = List.generate(
-//         50,
-//         (index) => Star(
-//           x: Random().nextDouble() * MediaQuery.of(context).size.width,
-//           y: Random().nextDouble() * MediaQuery.of(context).size.height,
-//           size: Random().nextDouble() * 2 + 1,
-//           speed: Random().nextDouble() * 0.5 + 0.2,
-//         ),
-//       );
-
-//       _controller.repeat();
-//     });
-//   }
-
-//   @override
-//   void dispose() {
-//     _controller.dispose();
-//     super.dispose();
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return AnimatedBuilder(
-//       animation: _controller,
-//       builder: (context, child) {
-//         return CustomPaint(
-//           painter: StarPainter(
-//             stars: _stars,
-//             progress: _controller.value,
-//           ),
-//           size: MediaQuery.of(context).size,
-//         );
-//       },
-//     );
-//   }
-// }
-
-// class Star {
-//   final double x;
-//   final double y;
-//   final double size;
-//   final double speed;
-
-//   Star({
-//     required this.x,
-//     required this.y,
-//     required this.size,
-//     required this.speed,
-//   });
-// }
-
-// class StarPainter extends CustomPainter {
-//   final List<Star> stars;
-//   final double progress;
-
-//   StarPainter({required this.stars, required this.progress});
-
-//   @override
-//   void paint(Canvas canvas, Size size) {
-//     final paint = Paint()..color = Colors.white;
-
-//     stars.forEach((star) {
-//       final starPath = Path();
-//       starPath.moveTo(star.x, star.y);
-//       starPath.lineTo(star.x - star.size, star.y + star.size);
-//       starPath.lineTo(star.x + star.size, star.y + star.size);
-//       starPath.lineTo(star.x, star.y - star.size);
-//       starPath.close();
-
-//       final starPaint = paint..color = paint.color.withOpacity(star.size / 3);
-
-//       canvas.drawPath(starPath, starPaint);
-//     });
-//   }
-
-//   @override
-//   bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
-// }
-
-// class StarBackgroundPage extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('Fundo de Estrelas em Movimento'),
-//       ),
-//       body: StarBackground(),
-//     );
-//   }
-// }
-
-// void main() {
-//   runApp(MaterialApp(
-//     home: StarBackgroundPage(),
-//   ));
-// }
+class _HomeReservasState extends State<HomeReservas> {
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Colors.blueAccent,
+                Colors.white,
+              ],
+            ),
+          ),
+        ),
+        Scaffold(
+          backgroundColor: Colors.transparent,
+          drawer: DrawerMenu(),
+          appBar:AppBar(
+        ),
+        body: Column(
+          children: [
+            Container(
+              padding: EdgeInsets.only(top: 30,),
+              child: Column(
+                children: [
+                  ListTile(
+                    title: Center(child: Text('Suas Reservas',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
+                    ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            
+            Container(
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 20, top: 30),
+                child: ListBody(children: [
+                  Card(
+                    shadowColor: Colors.black,
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 20, top: 20, ),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                             
+                              Container(alignment: Alignment.topCenter,
+                               padding: EdgeInsets.only(left: 20),
+                                child: Text('Procedimento:',
+                                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color:Color(0xFF091B3A)),
+                                ),
+                              ),
+                              //  SizedBox(width: 40),
+                              Container(alignment: Alignment.topRight,
+                              padding:EdgeInsets.only(left: 85) ,
+                                child: IconButton(onPressed: () => {}, icon: Icon(Icons.edit, size: 30, color:Colors.blueAccent),
+                                ),                                
+                                ),
+                                SizedBox(width: 10,),
+                                Container(alignment: Alignment.topRight,
+                                child: IconButton(onPressed: () => {}, icon: Icon(Icons.delete_forever, size: 35, color:Colors.blueAccent),
+                                ),
+                                ),
+                            ],
+                          ),                    
+                          Container(
+                          alignment: Alignment.topLeft,
+                          padding: EdgeInsets.only(left: 20, top: 10),
+                            child: Text('informações', style: TextStyle(fontSize: 20),
+                            ),
+                            ),                     
+                          Container(
+                          alignment: Alignment.topLeft,
+                          padding: EdgeInsets.only(left: 20, top: 10),
+                            child: Text('Proficional', style: TextStyle(fontSize: 20),
+                            ),
+                            ),
+                            Container(
+                          alignment: Alignment.topLeft,
+                          padding: EdgeInsets.only(left: 20, top: 10),
+                            child: Text('Data', style: TextStyle(fontSize: 20),
+                            ),
+                            ),
+                            Container(
+                          alignment: Alignment.topLeft,
+                          padding: EdgeInsets.only(left: 20, top: 10),
+                            child: Text('Hora', style: TextStyle(fontSize: 20),
+                            ),
+                            ),
+                        ],
+                      ),
+                    ),
+                  )
+                ]),
+              ),
+            ),
+          ],
+        ),
+        
+        ),
+      ],
+    );
+  }
+}

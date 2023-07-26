@@ -1,4 +1,6 @@
+
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class DrawerMenu extends StatelessWidget {
   const DrawerMenu({Key? key}) : super(key: key);
@@ -24,19 +26,46 @@ class DrawerMenu extends StatelessWidget {
                         'CATEGORIAS',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 26,
+                          fontSize: 28,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
                       ),
+                     
                     ],
                   ),
-                ),
+                ),                              
               ],
             ),
           ),
-         
-        ],
+         Container(
+          child:  ListTile(title: TextButton(onPressed: () { Modular.to.navigate('/'); },
+          child: Text('Página inicial',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),),), 
+                ),                 
+         ),  
+          Divider(
+            height: 10,    
+            ),
+         Container(
+          child:  ListTile(title: TextButton(onPressed: () { Modular.to.navigate('/reservas'); },
+          child: Text('Minhas Reservas',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),),), 
+                ),                 
+         ),  
+          Divider(    
+           height: 10,    
+          ),
+          Container(
+          child:  ListTile(title: TextButton(onPressed: () { Modular.to.navigate('/'); },
+          child: Text('Sair',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),),), 
+                ),                 
+         ),  
+          Divider(    
+           height: 5,    
+          ),
+        ],     
       ),
     );
   }

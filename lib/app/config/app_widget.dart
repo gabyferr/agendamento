@@ -8,7 +8,7 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute('/login');
+    Modular.setInitialRoute('/reservas');
     return MaterialApp.router(
       title: 'App',
       theme: ThemeData(
