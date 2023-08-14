@@ -346,6 +346,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.5.1"
+  time_parser:
+    dependency: transitive
+    description:
+      name: time_parser
+      sha256: "9876bbf498e65752330ba09bc151662f45d553b9ba7fe9b7510222a23c7c8724"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.1"
+  time_span:
+    dependency: "direct main"
+    description:
+      name: time_span
+      sha256: "77100e956ec6ad00ff4d7eac44b97952f1e6d8d3fcc6a5a5406301d1a3fe8426"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.2"
   timeago:
     dependency: transitive
     description:

@@ -3,7 +3,7 @@ import 'package:agendamento/app/modules/login/login_page.dart';
 import 'package:agendamento/app/modules/reservas/home_reservas.dart';
 import 'package:agendamento/app/modules/reservas/reserva_controller.dart';
 import 'package:agendamento/app/modules/usuario/usuario_controller.dart';
-import 'package:agendamento/app/modules/usuario/usuario_page.dart';
+import 'package:agendamento/app/modules/reservas/dados_reserva_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import '../modules/home/home_page.dart';
