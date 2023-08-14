@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class AppWidget extends StatelessWidget {
@@ -8,13 +9,17 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute('/reservas');
+    Modular.setInitialRoute('/');
     return MaterialApp.router(
       title: 'App',
       theme: ThemeData(
         useMaterial3: true,
         colorSchemeSeed: Colors.blue.shade800,
       ),
+      locale: Locale('pt_BR'),
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+      ],
       scrollBehavior: CustomScrollBehavior(),
       debugShowCheckedModeBanner: false,
       routeInformationParser: Modular.routeInformationParser,

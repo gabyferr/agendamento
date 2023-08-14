@@ -9,7 +9,6 @@ class AppStore {
 
   void deslogar() {
     setUser(null);
-    Modular.to.pop();
-    Modular.to.navigate('/');
+    Modular.to.navigate('/login');
   }
 }

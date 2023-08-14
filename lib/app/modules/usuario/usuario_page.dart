@@ -1,16 +1,29 @@
-import 'package:agendamento/app/modules/usuario/usuario_controller.dart';
-import 'package:agendamento/app/modules/usuario/usuario_model.dart';
+import 'package:agendamento/app/modules/reservas/reserva_controller.dart';
+import 'package:agendamento/app/modules/reservas/reserva_model.dart';
+import 'package:agendamento/app/util/date_util.dart';
 import 'package:flutter/material.dart';
 
 import 'package:dart_date/dart_date.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-class UsuarioPage extends StatelessWidget {
+class UsuarioPage extends StatefulWidget {
   const UsuarioPage({Key? key}) : super(key: key);
 
   @override
+  State<UsuarioPage> createState() => _UsuarioPageState();
+}
+
+class _UsuarioPageState extends State<UsuarioPage> {
+  late ReservaModel reserva;
+
+  @override
+  void initState() {
+    reserva = ReservaModel();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    UsuarioModel usuarioModel = UsuarioModel();
     return Stack(
       children: [
         Container(
@@ -79,30 +92,29 @@ class UsuarioPage extends StatelessWidget {
                             child: Column(
                               children: [
                                 Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
-                                    SizedBox(
-                                      width: 60,
-                                    ),
-                                    Text('data'),
-                                    SizedBox(
-                                      width: 80,
+                                    Text(
+                                      DateUtil.toBr(reserva.data),
                                     ),
                                     OutlinedButton(
                                         style: ButtonStyle(
                                             backgroundColor:
                                                 MaterialStateProperty.all(
                                                     Colors.blueAccent)),
-                                        onPressed: () {
-                                          showDatePicker(
+                                        onPressed: () async {
+                                          reserva.data = await showDatePicker(
                                             context: context,
                                             initialDate: DateTime.now(),
                                             firstDate: DateTime.now(),
                                             lastDate:
                                                 DateTime.now().addMonths(2),
                                           );
+                                          setState(() {});
                                         },
                                         child: Text(
-                                          'data',
+                                          "data",
                                           style: TextStyle(color: Colors.white),
                                         )),
                                   ],
@@ -198,8 +210,8 @@ class UsuarioPage extends StatelessWidget {
                                                   MaterialStateProperty.all(
                                                       Colors.blueAccent)),
                                           onPressed: () {
-                                            Modular.get<UsuarioController>()
-                                                .save(usuarioModel);
+                                            // Modular.get<ReservaController>()
+                                            //     .save(ReservaModel());
                                             showDialog(
                                               barrierDismissible: false,
                                               context: context,
@@ -226,7 +238,8 @@ class UsuarioPage extends StatelessWidget {
                                                                 .all(Colors
                                                                     .blueAccent)),
                                                     onPressed: () {
-                                                      Modular.to.navigate('/reservas');
+                                                      Modular.to.navigate(
+                                                          '/reservas');
                                                     },
                                                     child: Text(
                                                       'ok',

@@ -1,3 +1,4 @@
+import 'package:agendamento/app/modules/reservas/reserva_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ReservaController {
@@ -7,7 +8,7 @@ class ReservaController {
 
   listAll() {}
 
-  save() {}
+  save(ReservaModel reservaModel) {}
 
   delete() {}
 }
