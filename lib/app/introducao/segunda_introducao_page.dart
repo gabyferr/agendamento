@@ -17,6 +17,13 @@ class _SegundaItroPageState extends State<SegundaItroPage> {
         child: Center(
           child: Wrap(
             children: [
+              Text("Agendamento fácil e rápido em clicks!!",
+              style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,    
+                    ),
+              ),
               // Image(
               //   image: 
               //   AssetImage('assets/img_intro.png'),

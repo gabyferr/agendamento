@@ -17,7 +17,14 @@ class _PrimeiraIntroPageState extends State<PrimeiraIntroPage> {
         child: Center(
           child: Wrap(
             children: [
-              Card(child: Image.asset('assets/img/img_intro.png') ),
+              Text("Seja Bem Vindo!",
+              style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,    
+                    ),
+              ),
+              // Card(child: Image.asset('assets/img/img_intro.png') ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
