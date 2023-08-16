@@ -1,4 +1,6 @@
 // import 'package:agendamento/app/modules/reservas/home_reservas.dart';
+import 'package:agendamento/app/introducao/primeira_introducao_page.dart';
+import 'package:agendamento/app/introducao/segunda_introducao_page.dart';
 import 'package:agendamento/app/modules/login/login_page.dart';
 import 'package:agendamento/app/modules/reservas/home_reservas.dart';
 import 'package:agendamento/app/modules/reservas/reserva_controller.dart';
@@ -27,5 +29,7 @@ class AppModule extends Module {
         ChildRoute('/usuario', child: (context, args) => const UsuarioPage()),
         ChildRoute('/login', child: (context, args) => const LoginPage()),
         ChildRoute('/reservas', child: (context, args) => HomeReservas()),
+        ChildRoute('/intro1', child: (context, args) => const PrimeiraIntroPage()),
+         ChildRoute('/intro2', child: (context, args) => const SegundaItroPage()),
       ];
 }
