@@ -198,6 +198,9 @@ class FormCadastro extends StatelessWidget {
               onChanged: (value) {
                 usuarioModel.senha = value;
               },
+               validator: (value) {
+              return ValidacaoUtil.validarSenha(value);
+             },
             ),
             SizedBox(
               height: 18,
@@ -299,8 +302,9 @@ class FormCadastro extends StatelessWidget {
                  style: TextStyle(color: Colors.white)),
                 onPressed: () {
                   if (!_formKey.currentState!.validate()) {
-                    return;
-                  }
+                    return ;
+                  }  
+                  isFormLogin.value = true;
                 },
               ),
             ),
@@ -312,6 +316,7 @@ class FormCadastro extends StatelessWidget {
                 child: Text('Login'),
                 onPressed: () {
                   isFormLogin.value = true;
+                 
                 },
               ),
             ),

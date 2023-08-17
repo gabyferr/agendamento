@@ -1,9 +1,7 @@
+import 'package:agendamento/app/modules/reservas/reserva_controller.dart';
 import 'package:agendamento/app/modules/reservas/reserva_model.dart';
 import 'package:agendamento/app/util/date_util.dart';
-import 'package:agendamento/app/util/time_util.dart';
-import 'package:cloud_firestore_platform_interface/src/timestamp.dart';
 import 'package:flutter/material.dart';
-
 import 'package:dart_date/dart_date.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -182,30 +180,30 @@ class _UsuarioPageState extends State<UsuarioPage> {
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 actions: [
-                                  Center(
-                                    child: Row(
-                                      children: [
-                                        SizedBox(
-                                          width: 10,
-                                        ),
-                                        OutlinedButton(
-                                          style: ButtonStyle(
-                                              backgroundColor:
-                                                  MaterialStateProperty.all(
-                                                      Colors.blueAccent)),
-                                          onPressed: () {
-                                            Modular.to.pop();
-                                          },
-                                          child: Text(
-                                            'CANCELAR',
-                                            style:
-                                                TextStyle(color: Colors.white),
+                                  Wrap(
+                                    runSpacing: 20,
+                                    children: [ 
+                                      Row(
+                                      children: [            
+                                        Container(
+                                          padding: EdgeInsets.only(right: 10, left: 10),
+                                          child: OutlinedButton(
+                                            style: ButtonStyle(
+                                                backgroundColor:
+                                                    MaterialStateProperty.all(
+                                                        Colors.blueAccent)),
+                                            onPressed: () {
+                                              Modular.to.pop();
+                                            },
+                                            child: Text(
+                                              'CANCELAR',
+                                              style:
+                                                  TextStyle(color: Colors.white),
+                                            ),
                                           ),
                                         ),
-                                        SizedBox(
-                                          width: 20,
-                                        ),
                                         OutlinedButton(
+
                                           style: ButtonStyle(
                                               backgroundColor:
                                                   MaterialStateProperty.all(
@@ -260,6 +258,7 @@ class _UsuarioPageState extends State<UsuarioPage> {
                                         ),
                                       ],
                                     ),
+                                    ],
                                   ),
                                 ],
                               ));

@@ -32,7 +32,7 @@ class SegundaItroPage extends StatelessWidget {
               children: [
                 TextButton(
                   onPressed: () {
-                    Modular.to.navigate("/");
+                    Modular.to.navigate("/login");
                   },
                   child: Text(
                     "Entrar",
@@ -45,7 +45,7 @@ class SegundaItroPage extends StatelessWidget {
                 ),
                 IconButton(
                   onPressed: () {
-                    Modular.to.navigate("/");
+                    Modular.to.navigate("/login");
                   },
                   icon: Icon(Icons.arrow_forward),
                   color: Colors.white,

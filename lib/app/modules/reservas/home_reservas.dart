@@ -1,4 +1,5 @@
 import 'package:agendamento/app/modules/menu/drawer_menu.dart';
+import 'package:agendamento/app/modules/reservas/reserva_model.dart';
 import 'package:flutter/material.dart';
 
 class HomeReservas extends StatefulWidget {
@@ -9,6 +10,8 @@ class HomeReservas extends StatefulWidget {
 }
 
 class _HomeReservasState extends State<HomeReservas> {
+
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -118,7 +121,7 @@ class _HomeReservasState extends State<HomeReservas> {
                               alignment: Alignment.topLeft,
                               padding: EdgeInsets.only(left: 20, top: 10),
                               child: Text(
-                                'Data',
+                                "text",
                                 style: TextStyle(fontSize: 20),
                               ),
                             ),

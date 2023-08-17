@@ -57,7 +57,7 @@ class DrawerMenu extends StatelessWidget {
            height: 10,    
           ),
           Container(
-          child:  ListTile(title: TextButton(onPressed: () { Modular.to.navigate('/'); },
+          child:  ListTile(title: TextButton(onPressed: () { Modular.to.navigate('/login'); },
           child: Text('Sair',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),),), 
                 ),                 

@@ -3,12 +3,16 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ReservaController {
   final CollectionReference service;
-
   ReservaController(this.service);
 
   listAll() {}
 
-  save(ReservaModel reservaModel) {}
+  save(ReservaModel reservaModel) async{
+     await service.add(reservaModel.toMap());
+  }
 
   delete() {}
 }
+
+
+ 
