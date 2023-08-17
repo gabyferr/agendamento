@@ -4,12 +4,13 @@ import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:agendamento/app/modules/usuario/usuario_model.dart';
+import 'package:flutter/material.dart';
 
 class ReservaModel {
   int? id;
   UsuarioModel? usuario;
   DateTime? data;
-  Timestamp? hora;
+  TimeOfDay? hora;
 
   ReservaModel({
     this.id,

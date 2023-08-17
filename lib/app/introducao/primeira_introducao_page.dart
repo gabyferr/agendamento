@@ -1,54 +1,57 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-class PrimeiraIntroPage extends StatefulWidget {
+class PrimeiraIntroPage extends StatelessWidget {
   const PrimeiraIntroPage({super.key});
 
-  @override
-  State<PrimeiraIntroPage> createState() => _PrimeiraIntroPageState();
-}
-
-class _PrimeiraIntroPageState extends State<PrimeiraIntroPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blueAccent,
       body: Container(
-        child: Center(
-          child: Wrap(
-            children: [
-              Text("Seja Bem Vindo!",
+        alignment: Alignment.center,
+        padding: EdgeInsets.all(16),
+        child: Wrap(
+          alignment: WrapAlignment.center,
+          runSpacing: 32,
+          children: [
+            Text(
+              "Seja Bem Vindo!",
               style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,    
-                    ),
+                color: Colors.white,
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
               ),
-              // Card(child: Image.asset('assets/img/img_intro.png') ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    TextButton(
-                      onPressed: () { 
-                        Modular.to.navigate("/intro2"); 
-                        },
-                      child: Text("Próxima pagina", 
+            ),
+            Image.asset('assets/img/img_intro.png'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Modular.to.navigate("/intro2");
+                  },
+                  child: Text(
+                    "Próxima pagina",
                     style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,    
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
                     ),
-                    ),
-                    ),
-                    IconButton(onPressed: () {
-                      Modular.to.navigate("/intro2");
-                     }, 
-                icon: Icon(Icons.arrow_forward), color: Colors.white, iconSize: 30,)
-                  ],
-                ),  
-            ],
-          ),
-        ),  
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {
+                    Modular.to.navigate("/intro2");
+                  },
+                  icon: Icon(Icons.arrow_forward),
+                  color: Colors.white,
+                  iconSize: 30,
+                )
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -124,14 +124,11 @@ class _UsuarioPageState extends State<UsuarioPage> {
                                   padding: EdgeInsets.only(top: 10),
                                   child: Column(children: [
                                     Row(
-                                       mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                       
-                                        Text (
-                                        TimeUtil.toHM(reserva.hora?.toDate()),
-                                        ),
-                                       
+                                        Text(DateUtil.timeOfDayToHM(
+                                            reserva.hora)),
                                         OutlinedButton(
                                             style: ButtonStyle(
                                                 backgroundColor:
@@ -142,7 +139,7 @@ class _UsuarioPageState extends State<UsuarioPage> {
                                                   await showTimePicker(
                                                 context: context,
                                                 initialTime: TimeOfDay.now(),
-                                              ) as Timestamp?;
+                                              );
                                               setState(() {});
                                             },
                                             child: Text(
