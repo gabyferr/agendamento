@@ -7,7 +7,7 @@ Id flags:
 The output was:
 0
 MSBuild version 17.5.0+6f08c67f3 for .NET Framework
-Compilação de 19/07/2023 21:15:15 iniciada.
+Compilação de 16/08/2023 18:51:50 iniciada.
 Included response file: C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\MSBuild.rsp
 
 Projeto "C:\Users\Gaby\Desktop\agendamento\build\windows\CMakeFiles\3.25.1-msvc1\CompilerIdCXX\CompilerIdCXX.vcxproj" no nó 1 (destinos padrão).
@@ -35,7 +35,7 @@ Compilação com êxito.
     0 Aviso(s)
     0 Erro(s)
 
-Tempo Decorrido 00:00:01.63
+Tempo Decorrido 00:00:02.36
 
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -45,15 +45,15 @@ Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" p
 The CXX compiler identification is MSVC, found in "C:/Users/Gaby/Desktop/agendamento/build/windows/CMakeFiles/3.25.1-msvc1/CompilerIdCXX/CompilerIdCXX.exe"
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: C:/Users/Gaby/Desktop/agendamento/build/windows/CMakeFiles/CMakeScratch/TryCompile-ltadyl
+Change Dir: C:/Users/Gaby/Desktop/agendamento/build/windows/CMakeFiles/CMakeScratch/TryCompile-hdm2cy
 
-Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_2caff.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.0+6f08c67f3 for .NET Framework
+Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_ae6eb.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.0+6f08c67f3 for .NET Framework
 
   Microsoft (R) C/C++ Optimizing Compiler Versão 19.35.32215 para x64
-  CMakeCXXCompilerABI.cpp
   Copyright (C) Microsoft Corporation. Todos os direitos reservados.
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_2caff.dir\Debug\\" /Fd"cmTC_2caff.dir\Debug\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.25\Modules\CMakeCXXCompilerABI.cpp"
-  cmTC_2caff.vcxproj -> C:\Users\Gaby\Desktop\agendamento\build\windows\CMakeFiles\CMakeScratch\TryCompile-ltadyl\Debug\cmTC_2caff.exe
+  CMakeCXXCompilerABI.cpp
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_ae6eb.dir\Debug\\" /Fd"cmTC_ae6eb.dir\Debug\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.25\Modules\CMakeCXXCompilerABI.cpp"
+  cmTC_ae6eb.vcxproj -> C:\Users\Gaby\Desktop\agendamento\build\windows\CMakeFiles\CMakeScratch\TryCompile-hdm2cy\Debug\cmTC_ae6eb.exe
 
 
 

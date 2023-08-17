@@ -8,3 +8,7 @@ C:/Users/Gaby/Desktop/agendamento/build/windows/flutter/CMakeFiles/INSTALL.dir
 C:/Users/Gaby/Desktop/agendamento/build/windows/runner/CMakeFiles/agendamento.dir
 C:/Users/Gaby/Desktop/agendamento/build/windows/runner/CMakeFiles/INSTALL.dir
 C:/Users/Gaby/Desktop/agendamento/build/windows/runner/CMakeFiles/ALL_BUILD.dir
+C:/Users/Gaby/Desktop/agendamento/build/windows/plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir
+C:/Users/Gaby/Desktop/agendamento/build/windows/plugins/firebase_core/CMakeFiles/INSTALL.dir
+C:/Users/Gaby/Desktop/agendamento/build/windows/plugins/firebase_core/CMakeFiles/ALL_BUILD.dir
+C:/Users/Gaby/Desktop/agendamento/build/windows/plugins/firebase_core/bin/CMakeFiles/INSTALL.dir

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\Arquivos Usuario\\Desktop\\agendamento\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "outputFile": "C:\\Users\\Gaby\\Desktop\\agendamento\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
-                    "source": "E:\\Arquivos Usuario\\Desktop\\agendamento\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\Users\\Gaby\\Desktop\\agendamento\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
