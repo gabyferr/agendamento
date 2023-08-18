@@ -1,4 +1,3 @@
-import 'package:agendamento/app/modules/reservas/reserva_controller.dart';
 import 'package:agendamento/app/modules/reservas/reserva_model.dart';
 import 'package:agendamento/app/util/date_util.dart';
 import 'package:flutter/material.dart';
@@ -157,7 +156,6 @@ class _UsuarioPageState extends State<UsuarioPage> {
                     ),
                   ),
                 ),
-                // Container(child: OutlinedButton(onPressed:, child: child)),
                 Container(
                   padding: EdgeInsets.only(
                     top: 30,

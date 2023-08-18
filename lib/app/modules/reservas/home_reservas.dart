@@ -1,5 +1,4 @@
 import 'package:agendamento/app/modules/menu/drawer_menu.dart';
-import 'package:agendamento/app/modules/reservas/reserva_model.dart';
 import 'package:flutter/material.dart';
 
 class HomeReservas extends StatefulWidget {
