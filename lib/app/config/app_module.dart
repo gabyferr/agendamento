@@ -20,7 +20,7 @@ class AppModule extends Module {
         Bind(
           (i) => UsuarioController(
               FirebaseFirestore.instance.collection('usuario')),
-        )
+        ),
       ];
 
   @override
@@ -29,7 +29,9 @@ class AppModule extends Module {
         ChildRoute('/usuario', child: (context, args) => const UsuarioPage()),
         ChildRoute('/login', child: (context, args) => const LoginPage()),
         ChildRoute('/reservas', child: (context, args) => HomeReservas()),
-        ChildRoute('/intro1', child: (context, args) => const PrimeiraIntroPage()),
-         ChildRoute('/intro2', child: (context, args) => const SegundaItroPage()),
+        ChildRoute('/intro1',
+            child: (context, args) => const PrimeiraIntroPage()),
+        ChildRoute('/intro2',
+            child: (context, args) => const SegundaItroPage()),
       ];
 }

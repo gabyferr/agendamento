@@ -13,7 +13,7 @@ class UsuarioModel {
   String? cpf;
   String? email;
   String? celular;
-  String? dataNacimento;
+  DateTime? dataNacimento;
   String? cep;
   String? senha;
   UsuarioModel({
@@ -22,9 +22,9 @@ class UsuarioModel {
     this.cpf,
     this.email,
     this.celular,
-    String? dataNacimento,
-    String? cep,
-    String? senha,
+    this.dataNacimento,
+    this.cep,
+    this.senha,
   });
 
   get usuario => null;
@@ -36,7 +36,7 @@ class UsuarioModel {
       'cpf': cpf,
       'email': email,
       'celular': celular,
-      'dataNacimento': dataNacimento,
+      'dataNacimento': dataNacimento?.millisecondsSinceEpoch,
       'cep': cep,
       'senha': senha,
     };
@@ -49,8 +49,9 @@ class UsuarioModel {
       cpf: map['cpf'] != null ? map['cpf'] as String : null,
       email: map['email'] != null ? map['email'] as String : null,
       celular: map['celular'] != null ? map['celular'] as String : null,
-      dataNacimento:
-          map['dataNacimento'] != null ? map['dataNacimento'] as String : null,
+      dataNacimento: map['dataNacimento'] != null
+          ? DateTime.fromMillisecondsSinceEpoch(map['dataNacimento'] as int)
+          : null,
       cep: map['cep'] != null ? map['cep'] as String : null,
       senha: map['senha'] != null ? map['senha'] as String : null,
     );

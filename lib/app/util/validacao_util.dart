@@ -17,7 +17,7 @@ class ValidacaoUtil {
   static String? validarSenha(value) {
     if (value.length < 4) {
       return 'Senha inválido';
-    } else  {
+    } else {
       return null;
     }
   }
@@ -31,16 +31,16 @@ class ValidacaoUtil {
     }
   }
 
-  static String? validarDataNasc(value) {
+  static DateTime? validarDataNasc(value) {
     if (value == null || value.isEmpty) {
-      return 'data inválida';
+      return validarDataNasc(Future.error('data inválida'));
     }
 
     final date = DateTime.parse(value);
     final now = DateTime.now();
 
     if (date.isAfter(now)) {
-      return 'data inválida';
+      return validarDataNasc(Future.error('data inválida'));
     }
     return null;
   }
@@ -48,7 +48,4 @@ class ValidacaoUtil {
   static String? validarCep(value) {
     return null;
   }
-
- 
 }
-
