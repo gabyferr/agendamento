@@ -43,7 +43,9 @@ class LoginPage extends StatelessWidget {
 }
 
 class FormLogin extends StatelessWidget {
-  const FormLogin({super.key});
+ FormLogin({super.key});
+
+ final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +53,7 @@ class FormLogin extends StatelessWidget {
 
     return Padding(
       padding: const EdgeInsets.all(20),
+       key: _formKey,
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -105,7 +108,11 @@ class FormLogin extends StatelessWidget {
                       MaterialStateProperty.all(Colors.blueAccent)),
               child: Text('Entrar', style: TextStyle(color: Colors.white)),
               onPressed: () {
+                // if (!_formKey.currentState!.validate()) {
+                //     return;
+                //   }
                 Modular.get<UsuarioController>().logar(usuarioModel);
+                Modular.to.navigate('/');
               },
             ),
             SizedBox(
@@ -123,6 +130,9 @@ class FormLogin extends StatelessWidget {
     );
   }
 }
+
+
+
 
 class FormCadastro extends StatefulWidget {
   const FormCadastro({Key? key}) : super(key: key);
@@ -146,9 +156,11 @@ class _FormCadastroState extends State<FormCadastro> {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Form(
+        
         key: _formKey,
         child: ListView(
           scrollDirection: Axis.vertical,
+
           shrinkWrap: true,
           children: [
             SizedBox(
@@ -324,7 +336,7 @@ class _FormCadastroState extends State<FormCadastro> {
                     return;
                   }
                   Modular.get<UsuarioController>().save(usuario);
-                  isFormLogin.value = false;
+                  isFormLogin.value = true;
                 },
               ),
             ),

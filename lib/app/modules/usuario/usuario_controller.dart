@@ -18,7 +18,8 @@ class UsuarioController {
       return;
     }
 
-    await FirebaseAuth.instance
+    final userCredential = await FirebaseAuth.instance
         .signInWithEmailAndPassword(email: user.email!, password: user.senha!);
+
   }
 }
