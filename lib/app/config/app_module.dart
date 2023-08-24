@@ -25,7 +25,7 @@ class AppModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
-        ChildRoute('/', child: (context, args) => const HomePage()),
+        ChildRoute('/', child: (context, args) => HomePage()),
         ChildRoute('/usuario', child: (context, args) => const UsuarioPage()),
         ChildRoute('/login', child: (context, args) => const LoginPage()),
         ChildRoute('/reservas', child: (context, args) => HomeReservas()),

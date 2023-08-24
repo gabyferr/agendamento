@@ -9,8 +9,6 @@ class HomeReservas extends StatefulWidget {
 }
 
 class _HomeReservasState extends State<HomeReservas> {
-
-
   @override
   Widget build(BuildContext context) {
     return Stack(

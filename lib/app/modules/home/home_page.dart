@@ -1,10 +1,12 @@
+import 'package:agendamento/app/modules/home/procedimetos_controller.dart';
 import 'package:agendamento/app/modules/menu/drawer_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 //import 'package:flutter_modular/flutter_modular.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
+  final minhaLista = ProcedimentoController().buscarProcedimentos();
 
   @override
   Widget build(BuildContext context) {
@@ -57,12 +59,12 @@ class HomePage extends StatelessWidget {
               Expanded(
                 child: ListView.builder(
                   padding: const EdgeInsets.symmetric(horizontal: 12),
-                  itemCount: 10,
+                  itemCount: minhaLista.length,
                   itemBuilder: (context, index) => Card(
                     elevation: 4,
                     child: ListTile(
                       title: Text(
-                        'Item $index',
+                        minhaLista[index].descricao,
                         style: const TextStyle(
                           fontSize: 17,
                           color: Colors.black,
