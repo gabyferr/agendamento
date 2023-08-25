@@ -1,7 +1,21 @@
 import 'package:agendamento/app/modules/home/procedimento_model.dart';
 
 class ProcedimentoController {
-  List<Procedimento> buscarProcedimentos() {
-    return [Procedimento(nome: "kkkkkkkk", descricao: "kkkkk")];
+  List<ProcedimentoModel> buscarProcedimentos() {
+    return [
+      ProcedimentoModel(nome: "kkkkkkkk", descricao: "kkkkk"),
+      ProcedimentoModel(nome: "kkkkkkkk", descricao: "kkkkk"),
+      ProcedimentoModel(nome: "kkkkkkkk", descricao: "kkkkk"),
+      ProcedimentoModel(nome: "kkkkkkkk", descricao: "kkkkk"),
+      ProcedimentoModel(nome: "kkkkkkkk", descricao: "kkkkk"),
+      ProcedimentoModel(nome: "kkkkkkkk", descricao: "kkkkk"),
+      ProcedimentoModel(nome: "kkkkkkkk", descricao: "kkkkk"),
+      ProcedimentoModel(nome: "kkkkkkkk", descricao: "kkkkk"),
+      ProcedimentoModel(nome: "kkkkkkkk", descricao: "kkkkk"),
+      ProcedimentoModel(nome: "kkkkkkkk", descricao: "kkkkk"),
+      ProcedimentoModel(nome: "kkkkkkkk", descricao: "kkkkk"),
+      ProcedimentoModel(nome: "kkkkkkkk", descricao: "kkkkk"),
+      ProcedimentoModel(nome: "kkkkkkkk", descricao: "kkkkk"),
+    ];
   }
 }

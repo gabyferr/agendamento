@@ -1,11 +1,18 @@
-import 'package:agendamento/app/modules/reservas/reserva_model.dart';
-import 'package:agendamento/app/util/date_util.dart';
-import 'package:flutter/material.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:dart_date/dart_date.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import 'package:agendamento/app/modules/home/procedimento_model.dart';
+import 'package:agendamento/app/modules/reservas/reserva_model.dart';
+import 'package:agendamento/app/util/date_util.dart';
+
 class UsuarioPage extends StatefulWidget {
-  const UsuarioPage({Key? key}) : super(key: key);
+  final ProcedimentoModel procedimento;
+  const UsuarioPage({
+    Key? key,
+    required this.procedimento,
+  }) : super(key: key);
 
   @override
   State<UsuarioPage> createState() => _UsuarioPageState();
@@ -16,7 +23,7 @@ class _UsuarioPageState extends State<UsuarioPage> {
 
   @override
   void initState() {
-    reserva = ReservaModel();
+    reserva = ReservaModel(procedimento: widget.procedimento);
     super.initState();
   }
 
@@ -55,7 +62,6 @@ class _UsuarioPageState extends State<UsuarioPage> {
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     )),
-
                 Container(
                   padding: EdgeInsets.only(top: 5),
                   child: Text(
@@ -63,7 +69,6 @@ class _UsuarioPageState extends State<UsuarioPage> {
                     style: TextStyle(fontSize: 18),
                   ),
                 ),
-
                 Container(
                   padding: EdgeInsets.only(top: 30, left: 30, right: 30),
                   child: Card(
@@ -73,7 +78,7 @@ class _UsuarioPageState extends State<UsuarioPage> {
                         child: Container(
                           padding: EdgeInsets.only(top: 10, bottom: 5),
                           child: Text(
-                            'Nome do procedimento',
+                            'Nome: ${reserva.procedimento?.nome}',
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -81,10 +86,12 @@ class _UsuarioPageState extends State<UsuarioPage> {
                       subtitle: Column(
                         children: [
                           Container(
-                              padding: EdgeInsets.only(
-                                bottom: 10,
-                              ),
-                              child: Text('informações')),
+                            padding: EdgeInsets.only(
+                              bottom: 10,
+                            ),
+                            child: Text(
+                                'Descrição: ${reserva.procedimento?.descricao}'),
+                          ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Column(
@@ -180,82 +187,86 @@ class _UsuarioPageState extends State<UsuarioPage> {
                                 actions: [
                                   Wrap(
                                     runSpacing: 20,
-                                    children: [ 
+                                    children: [
                                       Row(
-                                      children: [            
-                                        Container(
-                                          padding: EdgeInsets.only(right: 10, left: 10),
-                                          child: OutlinedButton(
+                                        children: [
+                                          Container(
+                                            padding: EdgeInsets.only(
+                                                right: 10, left: 10),
+                                            child: OutlinedButton(
+                                              style: ButtonStyle(
+                                                  backgroundColor:
+                                                      MaterialStateProperty.all(
+                                                          Colors.blueAccent)),
+                                              onPressed: () {
+                                                Modular.to.pop();
+                                              },
+                                              child: Text(
+                                                'CANCELAR',
+                                                style: TextStyle(
+                                                    color: Colors.white),
+                                              ),
+                                            ),
+                                          ),
+                                          OutlinedButton(
                                             style: ButtonStyle(
                                                 backgroundColor:
                                                     MaterialStateProperty.all(
                                                         Colors.blueAccent)),
                                             onPressed: () {
-                                              Modular.to.pop();
+                                              // Modular.get<ReservaController>()
+                                              //     .save(ReservaModel());
+                                              showDialog(
+                                                barrierDismissible: false,
+                                                context: context,
+                                                builder: (context) =>
+                                                    AlertDialog(
+                                                  title: Center(
+                                                    child: Text(
+                                                        'Reserva realizada com sucesso!!',
+                                                        style: TextStyle(
+                                                            fontSize: 17,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold)),
+                                                  ),
+                                                  content: Text(
+                                                    "Em caso de cancelamento realize com 12 horas de antecedencia.",
+                                                    textAlign:
+                                                        TextAlign.justify,
+                                                    style:
+                                                        TextStyle(fontSize: 16),
+                                                  ),
+                                                  actions: [
+                                                    ElevatedButton(
+                                                      style: ButtonStyle(
+                                                          backgroundColor:
+                                                              MaterialStateProperty
+                                                                  .all(Colors
+                                                                      .blueAccent)),
+                                                      onPressed: () {
+                                                        Modular.to.navigate(
+                                                            '/reservas');
+                                                      },
+                                                      child: Text(
+                                                        'ok',
+                                                        style: TextStyle(
+                                                            color:
+                                                                Colors.white),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              );
                                             },
                                             child: Text(
-                                              'CANCELAR',
-                                              style:
-                                                  TextStyle(color: Colors.white),
+                                              'FINALIZAR',
+                                              style: TextStyle(
+                                                  color: Colors.white),
                                             ),
                                           ),
-                                        ),
-                                        OutlinedButton(
-
-                                          style: ButtonStyle(
-                                              backgroundColor:
-                                                  MaterialStateProperty.all(
-                                                      Colors.blueAccent)),
-                                          onPressed: () {
-                                            // Modular.get<ReservaController>()
-                                            //     .save(ReservaModel());
-                                            showDialog(
-                                              barrierDismissible: false,
-                                              context: context,
-                                              builder: (context) => AlertDialog(
-                                                title: Center(
-                                                  child: Text(
-                                                      'Reserva realizada com sucesso!!',
-                                                      style: TextStyle(
-                                                          fontSize: 17,
-                                                          fontWeight:
-                                                              FontWeight.bold)),
-                                                ),
-                                                content: Text(
-                                                  "Em caso de cancelamento realize com 12 horas de antecedencia.",
-                                                  textAlign: TextAlign.justify,
-                                                  style:
-                                                      TextStyle(fontSize: 16),
-                                                ),
-                                                actions: [
-                                                  ElevatedButton(
-                                                    style: ButtonStyle(
-                                                        backgroundColor:
-                                                            MaterialStateProperty
-                                                                .all(Colors
-                                                                    .blueAccent)),
-                                                    onPressed: () {
-                                                      Modular.to.navigate(
-                                                          '/reservas');
-                                                    },
-                                                    child: Text(
-                                                      'ok',
-                                                      style: TextStyle(
-                                                          color: Colors.white),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            );
-                                          },
-                                          child: Text(
-                                            'FINALIZAR',
-                                            style:
-                                                TextStyle(color: Colors.white),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
+                                        ],
+                                      ),
                                     ],
                                   ),
                                 ],

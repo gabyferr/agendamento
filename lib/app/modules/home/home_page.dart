@@ -7,6 +7,8 @@ import 'package:flutter_modular/flutter_modular.dart';
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
   final minhaLista = ProcedimentoController().buscarProcedimentos();
+  final ProcedimentoController procedimentoController =
+      ProcedimentoController();
 
   @override
   Widget build(BuildContext context) {
@@ -64,11 +66,19 @@ class HomePage extends StatelessWidget {
                     elevation: 4,
                     child: ListTile(
                       title: Text(
-                        minhaLista[index].descricao,
+                        minhaLista[index].nome,
                         style: const TextStyle(
                           fontSize: 17,
                           color: Colors.black,
                           fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      subtitle: Text(
+                        minhaLista[index].descricao,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w300,
                         ),
                       ),
                       trailing: Container(
@@ -99,7 +109,8 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                       onTap: () {
-                        Modular.to.pushNamed('/usuario');
+                        Modular.to.pushNamed('/usuario',
+                            arguments: minhaLista[index]);
                       },
                     ),
                   ),

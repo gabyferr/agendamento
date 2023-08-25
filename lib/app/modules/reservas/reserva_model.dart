@@ -1,19 +1,24 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
-import 'package:agendamento/app/modules/usuario/usuario_model.dart';
+
 import 'package:flutter/material.dart';
+
+import 'package:agendamento/app/modules/home/procedimento_model.dart';
+import 'package:agendamento/app/modules/usuario/usuario_model.dart';
 
 class ReservaModel {
   int? id;
   UsuarioModel? usuario;
   DateTime? data;
   TimeOfDay? hora;
+  ProcedimentoModel? procedimento;
 
   ReservaModel({
     this.id,
     this.usuario,
     this.data,
     this.hora,
+    this.procedimento,
   });
 
   Map<String, dynamic> toMap() {
