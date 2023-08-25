@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:agendamento/app/modules/home/procedimetos_controller.dart';
 import 'package:dart_date/dart_date.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -9,10 +10,12 @@ import 'package:agendamento/app/util/date_util.dart';
 
 class UsuarioPage extends StatefulWidget {
   final ProcedimentoModel procedimento;
-  const UsuarioPage({
+   UsuarioPage({
     Key? key,
     required this.procedimento,
   }) : super(key: key);
+  
+  
 
   @override
   State<UsuarioPage> createState() => _UsuarioPageState();
@@ -20,10 +23,11 @@ class UsuarioPage extends StatefulWidget {
 
 class _UsuarioPageState extends State<UsuarioPage> {
   late ReservaModel reserva;
+   
 
   @override
   void initState() {
-    reserva = ReservaModel(procedimento: widget.procedimento);
+    reserva = ReservaModel( minhaReserva: widget.procedimento, );
     super.initState();
   }
 
@@ -246,7 +250,8 @@ class _UsuarioPageState extends State<UsuarioPage> {
                                                                       .blueAccent)),
                                                       onPressed: () {
                                                         Modular.to.navigate(
-                                                            '/reservas');
+                                                            '/reservas', arguments: MinhasReservas().minhasReservas,
+                                                            );
                                                       },
                                                       child: Text(
                                                         'ok',

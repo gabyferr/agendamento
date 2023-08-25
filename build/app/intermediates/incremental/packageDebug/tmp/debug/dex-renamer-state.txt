@@ -1,19 +1,19 @@
-#Thu Aug 24 21:28:16 BRT 2023
-path.4=9/classes.dex
-path.3=1/classes.dex
-path.2=0/classes.dex
-path.1=0/classes.dex
-path.5=classes2.dex
+#Fri Aug 25 11:18:40 BRT 2023
+base.0=E\:\\Arquivos Usuario\\Desktop\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=E\:\\Arquivos Usuario\\Desktop\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
+base.2=E\:\\Arquivos Usuario\\Desktop\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.3=E\:\\Arquivos Usuario\\Desktop\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
+base.4=E\:\\Arquivos Usuario\\Desktop\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
+base.5=E\:\\Arquivos Usuario\\Desktop\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 path.0=classes.dex
-base.4=C\:\\Users\\Gaby\\Desktop\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
-base.3=C\:\\Users\\Gaby\\Desktop\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
-base.2=C\:\\Users\\Gaby\\Desktop\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.1=C\:\\Users\\Gaby\\Desktop\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
-base.0=C\:\\Users\\Gaby\\Desktop\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-renamed.3=classes4.dex
-renamed.2=classes3.dex
-renamed.1=classes2.dex
+path.1=0/classes.dex
+path.2=0/classes.dex
+path.3=1/classes.dex
+path.4=9/classes.dex
+path.5=classes2.dex
 renamed.0=classes.dex
-renamed.5=classes6.dex
+renamed.1=classes2.dex
+renamed.2=classes3.dex
+renamed.3=classes4.dex
 renamed.4=classes5.dex
-base.5=C\:\\Users\\Gaby\\Desktop\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+renamed.5=classes6.dex

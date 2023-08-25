@@ -12,13 +12,15 @@ class ReservaModel {
   DateTime? data;
   TimeOfDay? hora;
   ProcedimentoModel? procedimento;
+  ProcedimentoModel? minhaReserva;
 
   ReservaModel({
     this.id,
     this.usuario,
     this.data,
     this.hora,
-    this.procedimento,
+    this.procedimento, 
+    this .minhaReserva,
   });
 
   Map<String, dynamic> toMap() {
@@ -33,7 +35,7 @@ class ReservaModel {
       id: map['id'] != null ? map['id'] as int : null,
       usuario: map['usuario'] != null
           ? UsuarioModel.fromMap(map['usuario'] as Map<String, dynamic>)
-          : null,
+          : null, 
     );
   }
 

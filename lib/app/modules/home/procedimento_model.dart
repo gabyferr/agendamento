@@ -2,6 +2,9 @@
 class ProcedimentoModel {
   String nome;
   String descricao;
+  ProcedimentoModel? minhasReservas;
+  ProcedimentoModel? procedimento;
+
   ProcedimentoModel({
     required this.nome,
     required this.descricao,

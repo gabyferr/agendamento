@@ -1,14 +1,28 @@
+import 'package:agendamento/app/modules/home/procedimento_model.dart';
 import 'package:agendamento/app/modules/menu/drawer_menu.dart';
+import 'package:agendamento/app/modules/reservas/reserva_model.dart';
 import 'package:flutter/material.dart';
 
 class HomeReservas extends StatefulWidget {
-  const HomeReservas({super.key});
+  final ProcedimentoModel minhaReserva;
+  const HomeReservas({
+    Key? key,
+    required this.minhaReserva,
+  }) : super(key: key);
 
   @override
   State<HomeReservas> createState() => _HomeReservasState();
 }
 
 class _HomeReservasState extends State<HomeReservas> {
+  late ReservaModel reserva;
+
+ @override
+  void initState() {
+    reserva = ReservaModel(minhaReserva: widget.minhaReserva);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
