@@ -1,13 +1,13 @@
 import 'package:agendamento/app/modules/home/procedimento_model.dart';
 import 'package:agendamento/app/modules/menu/drawer_menu.dart';
+import 'package:agendamento/app/modules/reservas/reserva_controller.dart';
 import 'package:agendamento/app/modules/reservas/reserva_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class HomeReservas extends StatefulWidget {
-  final ProcedimentoModel minhaReserva;
   const HomeReservas({
     Key? key,
-    required this.minhaReserva,
   }) : super(key: key);
 
   @override
@@ -15,11 +15,9 @@ class HomeReservas extends StatefulWidget {
 }
 
 class _HomeReservasState extends State<HomeReservas> {
-  late ReservaModel reserva;
-
- @override
+  @override
   void initState() {
-    reserva = ReservaModel(minhaReserva: widget.minhaReserva);
+    print(Modular.get<ReservaController>().listAllByUser(11));
     super.initState();
   }
 
@@ -63,11 +61,11 @@ class _HomeReservasState extends State<HomeReservas> {
                   ],
                 ),
               ),
-              Container(
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: 20, top: 30),
-                  child: ListBody(children: [
-                    Card(
+              Expanded(
+                child: ListView.builder(
+                  itemCount: 4,
+                  itemBuilder: (ontext, index) {
+                    return Card(
                       shadowColor: Colors.black,
                       child: Padding(
                         padding: const EdgeInsets.only(
@@ -147,10 +145,10 @@ class _HomeReservasState extends State<HomeReservas> {
                           ],
                         ),
                       ),
-                    )
-                  ]),
+                    );
+                  },
                 ),
-              ),
+              )
             ],
           ),
         ),

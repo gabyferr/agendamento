@@ -5,14 +5,25 @@ class ReservaController {
   final CollectionReference service;
   ReservaController(this.service);
 
-  listAll() {}
+  listAllByUser(int id) async {
+    final resp = service.where('id', isEqualTo: id);
+    final a = await resp.get();
+    print(a.docs);
+  }
 
-  save(ReservaModel reservaModel) async{
-     await service.add(reservaModel.toMap());
+  Future<bool> save(ReservaModel reserva) async {
+    try {
+      if (reserva.data == null || reserva.hora == null) {
+        return false;
+      }
+      //validar o horario e data rstão disponiveis;
+      await service.add(reserva.toMap());
+      return true;
+    } catch (e) {
+      print(e);
+      return false;
+    }
   }
 
   delete() {}
 }
-
-
- 

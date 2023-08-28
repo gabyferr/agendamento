@@ -5,7 +5,7 @@ import 'package:rx_notifier/rx_notifier.dart';
 class AppStore {
   final userAtual = RxNotifier<UsuarioModel?>(null);
   void setUser(UsuarioModel? value) => userAtual.value = value;
-  bool get isLogado => userAtual.value?.usuario != null;
+  bool get isLogado => userAtual.value != null;
 
   void deslogar() {
     setUser(null);
