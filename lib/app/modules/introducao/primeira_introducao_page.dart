@@ -42,7 +42,7 @@ class PrimeiraIntroPage extends StatelessWidget {
                 ),
                 IconButton(
                   onPressed: () {
-                    Modular.to.navigate("/intro2");
+                    Modular.to.navigate("/introducaoPage2");
                   },
                   icon: Icon(Icons.arrow_forward),
                   color: Colors.white,

@@ -5,17 +5,21 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 class UsuarioController {
   final CollectionReference service;
+  final FirebaseFirestore firebaseFirestore;
   UsuarioController(
     this.service,
+    this.firebaseFirestore,
   );
 
   save(UsuarioModel usuarioModel) async {
-    await service.add(usuarioModel.toMap());
+    usuarioModel.id = 50;
+    await firebaseFirestore.collection('usuario').doc(usuarioModel.email!).set(usuarioModel.toMap());
+        // await service.add(usuarioModel.toMap());
   }
 
   logar(UsuarioModel user) async {
     if (user.email == null || user.senha == null) {
-      return;
+      return ;
     }
 
     final userCredential = await FirebaseAuth.instance

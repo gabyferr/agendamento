@@ -1,20 +1,21 @@
-import 'package:agendamento/app/modules/home/procedimento_model.dart';
 import 'package:agendamento/app/modules/menu/drawer_menu.dart';
 import 'package:agendamento/app/modules/reservas/reserva_controller.dart';
 import 'package:agendamento/app/modules/reservas/reserva_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-class HomeReservas extends StatefulWidget {
-  const HomeReservas({
+
+class MinhasReservas extends StatefulWidget {
+   MinhasReservas({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<HomeReservas> createState() => _HomeReservasState();
+  State<MinhasReservas> createState() => _MinhasReservasState();
+   late ReservaModel reserva;
 }
 
-class _HomeReservasState extends State<HomeReservas> {
+class _MinhasReservasState extends State<MinhasReservas> {
   @override
   void initState() {
     print(Modular.get<ReservaController>().listAllByUser(11));
@@ -114,7 +115,7 @@ class _HomeReservasState extends State<HomeReservas> {
                               alignment: Alignment.topLeft,
                               padding: EdgeInsets.only(left: 20, top: 10),
                               child: Text(
-                                'informações',
+                                'Descrição: ',
                                 style: TextStyle(fontSize: 20),
                               ),
                             ),

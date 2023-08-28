@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\Arquivos Usuario\\Desktop\\agendamento\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "E:\\Arquivos Usuario\\Documents\\GitHub\\agendamento\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\GabriellyCustodio\\.gradle\\caches\\transforms-3\\05304738454a7c6fee076a188df4c25d\\transformed\\browser-1.4.0\\res\\values\\values.xml",
@@ -76,7 +76,7 @@
                     }
                 },
                 {
-                    "source": "E:\\Arquivos Usuario\\Desktop\\agendamento\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "E:\\Arquivos Usuario\\Documents\\GitHub\\agendamento\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

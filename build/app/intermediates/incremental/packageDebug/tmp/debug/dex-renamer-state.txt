@@ -1,10 +1,10 @@
-#Fri Aug 25 11:18:40 BRT 2023
-base.0=E\:\\Arquivos Usuario\\Desktop\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=E\:\\Arquivos Usuario\\Desktop\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
-base.2=E\:\\Arquivos Usuario\\Desktop\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.3=E\:\\Arquivos Usuario\\Desktop\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
-base.4=E\:\\Arquivos Usuario\\Desktop\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
-base.5=E\:\\Arquivos Usuario\\Desktop\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+#Mon Aug 28 08:46:55 BRT 2023
+base.0=E\:\\Arquivos Usuario\\Documents\\GitHub\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=E\:\\Arquivos Usuario\\Documents\\GitHub\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
+base.2=E\:\\Arquivos Usuario\\Documents\\GitHub\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.3=E\:\\Arquivos Usuario\\Documents\\GitHub\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
+base.4=E\:\\Arquivos Usuario\\Documents\\GitHub\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
+base.5=E\:\\Arquivos Usuario\\Documents\\GitHub\\agendamento\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=0/classes.dex

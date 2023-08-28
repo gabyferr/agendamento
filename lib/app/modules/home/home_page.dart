@@ -109,7 +109,7 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                       onTap: () {
-                        Modular.to.pushNamed('/usuario',
+                        Modular.to.pushNamed('/reservaProcedimento',
                             arguments: minhaLista[index]);
                       },
                     ),

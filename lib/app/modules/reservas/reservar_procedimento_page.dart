@@ -1,5 +1,4 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:agendamento/app/modules/home/procedimetos_controller.dart';
 import 'package:agendamento/app/modules/reservas/reserva_controller.dart';
 import 'package:dart_date/dart_date.dart';
 import 'package:flutter/material.dart';
@@ -9,24 +8,25 @@ import 'package:agendamento/app/modules/home/procedimento_model.dart';
 import 'package:agendamento/app/modules/reservas/reserva_model.dart';
 import 'package:agendamento/app/util/date_util.dart';
 
-class ReservaProcedimentoPage extends StatefulWidget {
+class ReservarProcedimentoPage extends StatefulWidget {
   final ProcedimentoModel procedimento;
-  ReservaProcedimentoPage({
+  ReservarProcedimentoPage({
     Key? key,
     required this.procedimento,
   }) : super(key: key);
 
   @override
-  State<ReservaProcedimentoPage> createState() =>
-      _ReservaProcedimentoPageState();
+  State<ReservarProcedimentoPage> createState() =>
+      _ReservarProcedimentoPageState();
 }
 
-class _ReservaProcedimentoPageState extends State<ReservaProcedimentoPage> {
+class _ReservarProcedimentoPageState extends State<ReservarProcedimentoPage> {
   late ReservaModel reserva;
 
   @override
   void initState() {
     reserva = ReservaModel(
+
       procedimento: widget.procedimento,
     );
     super.initState();
@@ -222,9 +222,11 @@ class _ReservaProcedimentoPageState extends State<ReservaProcedimentoPage> {
                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                           backgroundColor: Colors.red,
                           content: Text(
-                            'Nao foi possivel reservar!',
+                            'Não foi possivel realiazar a reserva!',                                       
+                            textAlign: TextAlign.center,
                             style: TextStyle(color: Colors.white),
                           ),
+                         
                         ));
                         return;
                       }
@@ -249,7 +251,7 @@ class _ReservaProcedimentoPageState extends State<ReservaProcedimentoPage> {
                                       Colors.blueAccent)),
                               onPressed: () {
                                 Modular.to.navigate(
-                                  '/reservas',
+                                  '/minhasReservas',
                                 );
                               },
                               child: Text(

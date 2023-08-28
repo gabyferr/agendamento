@@ -1,11 +1,11 @@
 // import 'package:agendamento/app/modules/reservas/home_reservas.dart';
-import 'package:agendamento/app/introducao/primeira_introducao_page.dart';
-import 'package:agendamento/app/introducao/segunda_introducao_page.dart';
+import 'package:agendamento/app/modules/introducao/primeira_introducao_page.dart';
+import 'package:agendamento/app/modules/introducao/segunda_introducao_page.dart';
 import 'package:agendamento/app/modules/login/login_page.dart';
-import 'package:agendamento/app/modules/reservas/home_reservas.dart';
+import 'package:agendamento/app/modules/reservas/minhas_reservas.dart';
 import 'package:agendamento/app/modules/reservas/reserva_controller.dart';
 import 'package:agendamento/app/modules/usuario/usuario_controller.dart';
-import 'package:agendamento/app/modules/reservas/reserva_procedimento_page.dart';
+import 'package:agendamento/app/modules/reservas/reservar_procedimento_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import '../modules/home/home_page.dart';
@@ -19,22 +19,23 @@ class AppModule extends Module {
         ),
         Bind(
           (i) => UsuarioController(
-              FirebaseFirestore.instance.collection('usuario')),
+              FirebaseFirestore.instance.collection('usuario'),
+              FirebaseFirestore.instance),
         ),
       ];
 
   @override
   List<ModularRoute> get routes => [
-        ChildRoute('/', child: (context, args) => HomePage()),
-        ChildRoute('/usuario',
-            child: (context, args) => ReservaProcedimentoPage(
+        ChildRoute('/home', child: (context, args) => HomePage()),
+        ChildRoute('/reservarProcedimento',
+            child: (context, args) => ReservarProcedimentoPage(
                   procedimento: args.data,
                 )),
         ChildRoute('/login', child: (context, args) => const LoginPage()),
-        ChildRoute('/reservas', child: (context, args) => HomeReservas()),
-        ChildRoute('/intro1',
+        ChildRoute('/minhasReservas', child: (context, args) => MinhasReservas()),
+        ChildRoute('/introducaoPage1',
             child: (context, args) => const PrimeiraIntroPage()),
-        ChildRoute('/intro2',
+        ChildRoute('/introducaoPage2',
             child: (context, args) => const SegundaItroPage()),
       ];
 }
