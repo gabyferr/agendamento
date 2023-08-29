@@ -41,16 +41,16 @@ class DrawerMenu extends StatelessWidget {
          Container(
           child:  ListTile(title: TextButton(onPressed: () { Modular.to.navigate('/home'); },
           child: Text('Página inicial',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),),), 
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),), 
                 ),                 
          ),  
           Divider(
             height: 10,    
             ),
          Container(
-          child:  ListTile(title: TextButton(onPressed: () { Modular.to.navigate('/reservas'); },
+          child:  ListTile(title: TextButton(onPressed: () { Modular.to.navigate('/minhasReservas'); },
           child: Text('Minhas Reservas',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),),), 
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),), 
                 ),                 
          ),  
           Divider(    
@@ -59,7 +59,7 @@ class DrawerMenu extends StatelessWidget {
           Container(
           child:  ListTile(title: TextButton(onPressed: () { Modular.to.navigate('/login'); },
           child: Text('Sair',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),),), 
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),), 
                 ),                 
          ),  
           Divider(    

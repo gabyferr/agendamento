@@ -1,5 +1,7 @@
 import 'package:agendamento/app/modules/home/procedimetos_controller.dart';
 import 'package:agendamento/app/modules/menu/drawer_menu.dart';
+import 'package:agendamento/app/modules/menu/drwer_usuario.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 //import 'package:flutter_modular/flutter_modular.dart';
@@ -9,6 +11,7 @@ class HomePage extends StatelessWidget {
   final minhaLista = ProcedimentoController().buscarProcedimentos();
   final ProcedimentoController procedimentoController =
       ProcedimentoController();
+      final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -27,19 +30,18 @@ class HomePage extends StatelessWidget {
           ),
         ),
         Scaffold(
+          key: scaffoldKey,
           backgroundColor: Colors.transparent,
           drawer: DrawerMenu(),
+          endDrawer: DrawerUsuario(),
           appBar: AppBar(
             actions: <Widget>[
-              // IconButton(
-              //   icon: const Icon(Icons.add_alert),
-              //   tooltip: 'Mostrar snackbar',
-              //   onPressed: () {
-              //     ScaffoldMessenger.of(context).showSnackBar(
-              //       const SnackBar(content: Text('This is a snackbar')),
-              //     );
-              //   },
-              // ),
+              IconButton(onPressed: () {
+                scaffoldKey.currentState?.openEndDrawer();
+              }, icon: Icon(Icons.account_circle,
+              size: 35,
+              ),
+              ),
             ],
           ),
           body: Column(
@@ -109,7 +111,7 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                       onTap: () {
-                        Modular.to.pushNamed('/reservaProcedimento',
+                        Modular.to.pushNamed('/reservarProcedimento',
                             arguments: minhaLista[index]);
                       },
                     ),

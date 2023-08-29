@@ -6,7 +6,6 @@ import 'package:agendamento/app/modules/reservas/minhas_reservas.dart';
 import 'package:agendamento/app/modules/reservas/reserva_controller.dart';
 import 'package:agendamento/app/modules/usuario/usuario_controller.dart';
 import 'package:agendamento/app/modules/reservas/reservar_procedimento_page.dart';
-import 'package:agendamento/app/modules/usuario/usuario_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import '../modules/home/home_page.dart';
@@ -35,7 +34,6 @@ class AppModule extends Module {
         ChildRoute('/login', child: (context, args) => const LoginPage()),
         ChildRoute('/minhasReservas',
             child: (context, args) => MinhasReservas()),
-        ChildRoute('/usuarioPage', child: (context, args) => UsuarioPage()),
         ChildRoute('/introducaoPage1',
             child: (context, args) => const PrimeiraIntroPage()),
         ChildRoute('/introducaoPage2',

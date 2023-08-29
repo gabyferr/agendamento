@@ -9,7 +9,7 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute('/usuarioPage');
+    Modular.setInitialRoute('/home');
     return MaterialApp.router(
       title: 'App',
       theme: ThemeData(

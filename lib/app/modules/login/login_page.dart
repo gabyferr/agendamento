@@ -112,7 +112,7 @@ class FormLogin extends StatelessWidget {
                 //     return;
                 //   }
                 Modular.get<UsuarioController>().logar(usuarioModel);
-                Modular.to.navigate('/');
+                Modular.to.navigate('/home');
               },
             ),
             SizedBox(
