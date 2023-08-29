@@ -10,11 +10,13 @@ class MinhasReservas extends StatefulWidget {
     Key? key,
   }) : super(key: key);
 
+
   @override
   State<MinhasReservas> createState() => _MinhasReservasState();
    late ReservaModel reserva;
-}
+   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
+}
 class _MinhasReservasState extends State<MinhasReservas> {
   @override
   void initState() {
@@ -25,6 +27,7 @@ class _MinhasReservasState extends State<MinhasReservas> {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      //  key: scaffoldKey,
       children: [
         Container(
           decoration: const BoxDecoration(
