@@ -1,7 +1,6 @@
 import 'package:agendamento/app/modules/home/procedimetos_controller.dart';
 import 'package:agendamento/app/modules/menu/drawer_menu.dart';
 import 'package:agendamento/app/modules/menu/drwer_usuario.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 //import 'package:flutter_modular/flutter_modular.dart';

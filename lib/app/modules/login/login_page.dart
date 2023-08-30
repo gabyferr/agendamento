@@ -155,31 +155,28 @@ class _FormCadastroState extends State<FormCadastro> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(20.0),
-      child: Form(
-        
+      child: Form( 
         key: _formKey,
         child: ListView(
           scrollDirection: Axis.vertical,
-
           shrinkWrap: true,
           children: [
             SizedBox(
               height: 5,
             ),
-            Center(
-              child: Title(
-                  color: Colors.black,
-                  child: Text(
-                    'CADASTRO',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  )),
-            ),
-            SizedBox(
-              height: 20,
-            ),
+            Wrap(
+              alignment: WrapAlignment.center,
+              runSpacing: 20.0,
+              children: [
+                Title(
+                    color: Colors.black,
+                    child: Text(
+                      'CADASTRO',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
             TextField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(
@@ -190,9 +187,6 @@ class _FormCadastroState extends State<FormCadastro> {
               onChanged: (value) {
                 usuario.nome = value;
               },
-            ),
-            SizedBox(
-              height: 18,
             ),
             TextFormField(
               decoration: InputDecoration(
@@ -208,10 +202,8 @@ class _FormCadastroState extends State<FormCadastro> {
                 usuario.email = value;
               },
             ),
-            SizedBox(
-              height: 18,
-            ),
             TextFormField(
+              maxLength: 15,
               obscureText: true,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
@@ -224,9 +216,6 @@ class _FormCadastroState extends State<FormCadastro> {
               validator: (value) {
                 return ValidacaoUtil.validarSenha(value);
               },
-            ),
-            SizedBox(
-              height: 18,
             ),
             TextFormField(
               obscureText: true,
@@ -241,9 +230,6 @@ class _FormCadastroState extends State<FormCadastro> {
               validator: (value) {
                 return ValidacaoUtil.validarSenha(value);
               },
-            ),
-            SizedBox(
-              height: 20,
             ),
             TextFormField(
               inputFormatters: [
@@ -263,9 +249,6 @@ class _FormCadastroState extends State<FormCadastro> {
                 usuario.celular = value;
               },
             ),
-            SizedBox(
-              height: 18,
-            ),
             TextFormField(
                 inputFormatters: [
                   FilteringTextInputFormatter.digitsOnly,
@@ -280,9 +263,6 @@ class _FormCadastroState extends State<FormCadastro> {
                 onChanged: (value) {
                   usuario.cpf = value;
                 }),
-            SizedBox(
-              height: 18,
-            ),
             TextFormField(
               controller: TextEditingController(
                   text: DateUtil.toBr(usuario.dataNacimento)),
@@ -302,9 +282,6 @@ class _FormCadastroState extends State<FormCadastro> {
                 setState(() {});
               },
             ),
-            SizedBox(
-              height: 18,
-            ),
             TextFormField(
                 inputFormatters: [
                   FilteringTextInputFormatter.digitsOnly,
@@ -321,24 +298,19 @@ class _FormCadastroState extends State<FormCadastro> {
                 },
                 onChanged: (value) {
                   usuario.cep = value;
-                }),
-            SizedBox(
-              height: 20,
-            ),
-            Center(
-              child: OutlinedButton(
-                style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all(Colors.blueAccent)),
-                child: Text('Cadastrar', style: TextStyle(color: Colors.white)),
-                onPressed: () {
-                  if (!_formKey.currentState!.validate()) {
-                    return;
-                  }
-                  Modular.get<UsuarioController>().save(usuario);
-                  isFormLogin.value = true;
-                },
-              ),
+                }), 
+            OutlinedButton(
+              style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all(Colors.blueAccent)),
+              child: Text('Cadastrar', style: TextStyle(color: Colors.white)),
+              onPressed: () {
+                if (!_formKey.currentState!.validate()) {
+                  return;
+                }
+                Modular.get<UsuarioController>().save(usuario);
+                isFormLogin.value = true;
+              },
             ),
             SizedBox(
               height: 20,
@@ -350,6 +322,8 @@ class _FormCadastroState extends State<FormCadastro> {
                   isFormLogin.value = true;
                 },
               ),
+            ),
+            ],
             ),
           ],
         ),

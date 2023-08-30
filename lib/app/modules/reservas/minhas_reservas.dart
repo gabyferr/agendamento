@@ -14,7 +14,6 @@ class MinhasReservas extends StatefulWidget {
   @override
   State<MinhasReservas> createState() => _MinhasReservasState();
    late ReservaModel reserva;
-   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
 }
 class _MinhasReservasState extends State<MinhasReservas> {
@@ -27,7 +26,6 @@ class _MinhasReservasState extends State<MinhasReservas> {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      //  key: scaffoldKey,
       children: [
         Container(
           decoration: const BoxDecoration(
@@ -91,7 +89,6 @@ class _MinhasReservasState extends State<MinhasReservas> {
                                         color: Color(0xFF091B3A)),
                                   ),
                                 ),
-                                //  SizedBox(width: 40),
                                 Container(
                                   alignment: Alignment.topRight,
                                   padding: EdgeInsets.only(left: 85),
