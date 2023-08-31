@@ -43,9 +43,9 @@ class LoginPage extends StatelessWidget {
 }
 
 class FormLogin extends StatelessWidget {
- FormLogin({super.key});
+  FormLogin({super.key});
 
- final _formKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -53,29 +53,26 @@ class FormLogin extends StatelessWidget {
 
     return Padding(
       padding: const EdgeInsets.all(20),
-       key: _formKey,
+      key: _formKey,
       child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Wrap(
+          alignment: WrapAlignment.center,
+          runSpacing: 20.0,
           children: [
-            SizedBox(
-              height: 25,
-            ),
             Title(
-                color: Colors.black,
-                child: Text(
-                  'LOGIN',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                )),
-            SizedBox(
-              height: 35,
+              color: Colors.black,
+              child: Text(
+                'LOGIN',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
             TextFormField(
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(15))),
                 hintText: "user.user@gmail.com",
                 labelText: "Email",
               ),
@@ -86,43 +83,39 @@ class FormLogin extends StatelessWidget {
                 usuarioModel.email = value;
               },
             ),
-            SizedBox(
-              height: 25,
-            ),
             TextFormField(
               obscureText: true,
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(15))),
                 labelText: "Senha",
               ),
               onChanged: (value) {
                 usuarioModel.senha = value;
               },
             ),
-            SizedBox(
-              height: 25,
-            ),
-            OutlinedButton(
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(Colors.blueAccent)),
-              child: Text('Entrar', style: TextStyle(color: Colors.white)),
-              onPressed: () {
-                // if (!_formKey.currentState!.validate()) {
-                //     return;
-                //   }
-                Modular.get<UsuarioController>().logar(usuarioModel);
-                Modular.to.navigate('/home');
-              },
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            TextButton(
-              child: Text('Cadastrar'),
-              onPressed: () {
-                isFormLogin.value = false;
-              },
+            Column(
+              children: [
+                OutlinedButton(
+                  style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all(Colors.blueAccent)),
+                  child: Text('Entrar', style: TextStyle(color: Colors.white)),
+                  onPressed: () {
+                    // if (!_formKey.currentState!.validate()) {
+                    //     return;
+                    //   }
+                    Modular.get<UsuarioController>().logar(usuarioModel);
+                    Modular.to.navigate('/home');
+                  },
+                ),
+                TextButton(
+                  child: Text('Cadastrar'),
+                  onPressed: () {
+                    isFormLogin.value = false;
+                  },
+                ),
+              ],
             ),
           ],
         ),
@@ -130,9 +123,6 @@ class FormLogin extends StatelessWidget {
     );
   }
 }
-
-
-
 
 class FormCadastro extends StatefulWidget {
   const FormCadastro({Key? key}) : super(key: key);
@@ -155,7 +145,7 @@ class _FormCadastroState extends State<FormCadastro> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(20.0),
-      child: Form( 
+      child: Form(
         key: _formKey,
         child: ListView(
           scrollDirection: Axis.vertical,
@@ -177,153 +167,154 @@ class _FormCadastroState extends State<FormCadastro> {
                         fontWeight: FontWeight.bold,
                       ),
                     )),
-            TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(15))),
-                hintText: "NOME SOBRENOME:",
-                labelText: "NOME COMPLETO",
-              ),
-              onChanged: (value) {
-                usuario.nome = value;
-              },
-            ),
-            TextFormField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(15))),
-                hintText: "user.user@gmail.com",
-                labelText: "E-MAIL:",
-              ),
-              validator: (value) {
-                return ValidacaoUtil.validarEmail(value);
-              },
-              onChanged: (value) {
-                usuario.email = value;
-              },
-            ),
-            TextFormField(
-              maxLength: 15,
-              obscureText: true,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(15))),
-                labelText: "Senha",
-              ),
-              onChanged: (value) {
-                usuario.senha = value;
-              },
-              validator: (value) {
-                return ValidacaoUtil.validarSenha(value);
-              },
-            ),
-            TextFormField(
-              obscureText: true,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(15))),
-                labelText: "Confirme Senha",
-              ),
-              onChanged: (value) {
-                usuario.senha = value;
-              },
-              validator: (value) {
-                return ValidacaoUtil.validarSenha(value);
-              },
-            ),
-            TextFormField(
-              inputFormatters: [
-                FilteringTextInputFormatter.digitsOnly,
-                TelefoneInputFormatter(),
+                TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(15))),
+                    hintText: "NOME SOBRENOME:",
+                    labelText: "NOME COMPLETO",
+                  ),
+                  onChanged: (value) {
+                    usuario.nome = value;
+                  },
+                ),
+                TextFormField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(15))),
+                    hintText: "user.user@gmail.com",
+                    labelText: "E-MAIL:",
+                  ),
+                  validator: (value) {
+                    return ValidacaoUtil.validarEmail(value);
+                  },
+                  onChanged: (value) {
+                    usuario.email = value;
+                  },
+                ),
+                TextFormField(
+                  maxLength: 15,
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(15))),
+                    labelText: "Senha",
+                  ),
+                  onChanged: (value) {
+                    usuario.senha = value;
+                  },
+                  validator: (value) {
+                    return ValidacaoUtil.validarSenha(value);
+                  },
+                ),
+                TextFormField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(15))),
+                    labelText: "Confirme Senha",
+                  ),
+                  onChanged: (value) {
+                    usuario.senha = value;
+                  },
+                  validator: (value) {
+                    return ValidacaoUtil.validarSenha(value);
+                  },
+                ),
+                TextFormField(
+                  inputFormatters: [
+                    FilteringTextInputFormatter.digitsOnly,
+                    TelefoneInputFormatter(),
+                  ],
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(15))),
+                    hintText: "(00)0000-0000",
+                    labelText: "CELULAR:",
+                  ),
+                  validator: (value) {
+                    return ValidacaoUtil.validarCelular(value);
+                  },
+                  onChanged: (value) {
+                    usuario.celular = value;
+                  },
+                ),
+                TextFormField(
+                    inputFormatters: [
+                      FilteringTextInputFormatter.digitsOnly,
+                      CpfInputFormatter(),
+                    ],
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(15))),
+                      hintText: "000.000.000-00",
+                      labelText: "CPF:",
+                    ),
+                    onChanged: (value) {
+                      usuario.cpf = value;
+                    }),
+                TextFormField(
+                  controller: TextEditingController(
+                      text: DateUtil.toBr(usuario.dataNacimento)),
+                  readOnly: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(15))),
+                    labelText: "DATA SE NACIMENTO:",
+                  ),
+                  onTap: () async {
+                    usuario.dataNacimento = await showDatePicker(
+                      initialDate: DateTime.now(),
+                      firstDate: DateTime(1900),
+                      lastDate: DateTime(2050),
+                      context: context,
+                    );
+                    setState(() {});
+                  },
+                ),
+                TextFormField(
+                    inputFormatters: [
+                      FilteringTextInputFormatter.digitsOnly,
+                      CepInputFormatter(),
+                    ],
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(15))),
+                      hintText: "00.000-000",
+                      labelText: "CEP:",
+                    ),
+                    validator: (value) {
+                      return ValidacaoUtil.validarCep(value);
+                    },
+                    onChanged: (value) {
+                      usuario.cep = value;
+                    }),
+                OutlinedButton(
+                  style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all(Colors.blueAccent)),
+                  child:
+                      Text('Cadastrar', style: TextStyle(color: Colors.white)),
+                  onPressed: () {
+                    if (!_formKey.currentState!.validate()) {
+                      return;
+                    }
+                    Modular.get<UsuarioController>().save(usuario);
+                    isFormLogin.value = true;
+                  },
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Center(
+                  child: TextButton(
+                    child: Text('Login'),
+                    onPressed: () {
+                      isFormLogin.value = true;
+                    },
+                  ),
+                ),
               ],
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(15))),
-                hintText: "(00)0000-0000",
-                labelText: "CELULAR:",
-              ),
-              validator: (value) {
-                return ValidacaoUtil.validarCelular(value);
-              },
-              onChanged: (value) {
-                usuario.celular = value;
-              },
-            ),
-            TextFormField(
-                inputFormatters: [
-                  FilteringTextInputFormatter.digitsOnly,
-                  CpfInputFormatter(),
-                ],
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(15))),
-                  hintText: "000.000.000-00",
-                  labelText: "CPF:",
-                ),
-                onChanged: (value) {
-                  usuario.cpf = value;
-                }),
-            TextFormField(
-              controller: TextEditingController(
-                  text: DateUtil.toBr(usuario.dataNacimento)),
-              readOnly: true,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(15))),
-                labelText: "DATA SE NACIMENTO:",
-              ),
-              onTap: () async {
-                usuario.dataNacimento = await showDatePicker(
-                  initialDate: DateTime.now(),
-                  firstDate: DateTime(1900),
-                  lastDate: DateTime(2050),
-                  context: context,
-                );
-                setState(() {});
-              },
-            ),
-            TextFormField(
-                inputFormatters: [
-                  FilteringTextInputFormatter.digitsOnly,
-                  CepInputFormatter(),
-                ],
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(15))),
-                  hintText: "00.000-000",
-                  labelText: "CEP:",
-                ),
-                validator: (value) {
-                  return ValidacaoUtil.validarCep(value);
-                },
-                onChanged: (value) {
-                  usuario.cep = value;
-                }), 
-            OutlinedButton(
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(Colors.blueAccent)),
-              child: Text('Cadastrar', style: TextStyle(color: Colors.white)),
-              onPressed: () {
-                if (!_formKey.currentState!.validate()) {
-                  return;
-                }
-                Modular.get<UsuarioController>().save(usuario);
-                isFormLogin.value = true;
-              },
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Center(
-              child: TextButton(
-                child: Text('Login'),
-                onPressed: () {
-                  isFormLogin.value = true;
-                },
-              ),
-            ),
-            ],
             ),
           ],
         ),
